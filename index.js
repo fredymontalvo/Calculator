@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
           break;
         case "%":
           result = (convertSuperiorValue * convertInferiorValue) / 100;
+          break;
         default: //si no se cumple ninguno de los casos no hace nada
           return;
       }

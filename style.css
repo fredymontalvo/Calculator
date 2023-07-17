@@ -3,11 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: #cbc4c4;
+  background-image: url("https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1189&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+  filter: drop-shadow(60%);
+}
 
 #calculator {
   width: 400px;
   height: 600px;
-  background-color: #484343;
+  background-color: #a79f9f;
   display: grid;
   grid-template-columns: repeat(4, 80px);
   grid-template-rows: minmax(130px, auto) repeat(6, 80px);
@@ -34,29 +43,26 @@
   background-color: #e08080;
   color: wheat;
 }
-body {
-  background-color: #e1dcdc;
-}
 
 .display {
   width: 100%;
   height: 120px;
-  background-color: #945959;
+  background-color: #e2cece;
   grid-column: 1 / -1;
   text-align: end;
   border-radius: 5px;
 }
 
 .superior_value {
-  font-size: 1.5rem;
-  color: #fff;
+  font-size: 2em;
+  color: #1f1d1d;
   padding: 10px;
   margin: 3px;
 }
 
 .inferior_value {
-  font-size: 2rem;
-  color: #fff;
+  font-size: 2.5rem;
+  color: #272525;
   margin: 10px;
 }
 #span2 {
@@ -66,4 +72,3 @@ body {
 #span3 {
   grid-column: span 2;
 }
-
