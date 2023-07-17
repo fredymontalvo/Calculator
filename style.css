@@ -4,19 +4,19 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #cbc4c4;
-  background-image: url("https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1189&q=80");
+  background-color: #e1dcdc;
+  background-image: url("https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   font-family: "Roboto", sans-serif;
-  filter: drop-shadow(60%);
+  
 }
 
 #calculator {
   width: 400px;
   height: 600px;
-  background-color: #a79f9f;
+  background-color: #9a5151;
   display: grid;
   grid-template-columns: repeat(4, 80px);
   grid-template-rows: minmax(130px, auto) repeat(6, 80px);

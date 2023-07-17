@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const buttonEraseAll = document.querySelector(".erase-all");
   const textSuperiorValue = document.querySelector(".superior_value");
   const textInferiorValue = document.querySelector(".inferior_value");
+  console.log(buttonNumm);
 
   class Calculator {
     constructor(textInferiorValue, textSuperiorValue) {
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     compute() {
       let result;
-      let convertSuperiorValue = parseFloat(this.superiorValue);
+      let convertSuperiorValue = parseFloat(this.superiorValue); //convierte el valor superior en un numero
       let convertInferiorValue = parseFloat(this.inferiorValue);
       if (isNaN(convertSuperiorValue) || isNaN(convertInferiorValue)) return; //si no es un numero no hace nada
       switch (this.operator) {
@@ -60,9 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
         default: //si no se cumple ninguno de los casos no hace nada
           return;
       }
-      this.inferiorValue = result.toString();
-      this.operator = undefined;
-      this.superiorValue = "";
+      this.inferiorValue = result.toString(); //convierte el resultado en un string
+      this.operator = undefined; //limpia el operador
+      this.superiorValue = ""; //  limpia el valor superior
     }
     eraseScreen() {
       this.inferiorValue = "";
@@ -70,11 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
       this.operator = undefined;
     }
   }
-  const calculator = new Calculator(textInferiorValue, textSuperiorValue);
+  const calculator = new Calculator(textInferiorValue, textSuperiorValue); //crea una instancia de la clase Calculator
 
   buttonNumm.forEach((button) => {
     button.addEventListener("click", () => {
-      calculator.addNumber(button.textContent);
+      calculator.addNumber(button.textContent); //agrega el numero que se presiona
       calculator.updateDisplay();
     });
   });
@@ -91,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   buttonEqual.addEventListener("click", () => {
-    calculator.compute();
+    calculator.compute(); //realiza la operacion
     calculator.updateDisplay();
   });
 
