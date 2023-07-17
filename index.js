@@ -1,3 +1,4 @@
+
 const buttonNumm = document.querySelectorAll(".number"); //  seleccionamos todos los botones que tengan la clase number
 const buttonOper = document.querySelectorAll(".operator"); //  seleccionamos todos los botones que tengan la clase operator
 const buttonEqual = document.querySelector(".equal");
@@ -50,7 +51,7 @@ class Calculator {
       case "*":
         result = convertSuperiorValue * convertInferiorValue;
         break;
-      case "/":
+      case "÷":
         result = convertSuperiorValue / convertInferiorValue;
         break;
       case "%":
@@ -98,3 +99,4 @@ buttonEraseAll.addEventListener("click", () => {
   calculator.eraseScreen();
   calculator.updateDisplay();
 });
+
