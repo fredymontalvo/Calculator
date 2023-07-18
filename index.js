@@ -71,7 +71,7 @@ class Calculator {
     this.operator = undefined;
   }
 }
-const calculator = new Calculator(textInferiorValue, textSuperiorValue); //crea una instancia de la clase Calculator
+const calculator = new Calculator(textInferiorValue, textSuperiorValue); //crea una instancia de la clase Calculator, le pasamos los parametros que necesita, los textos que se van a actualizar, los seleccionamos con querySelector, y los pasamos como parametros. 
 
 buttonNumm.forEach((button) => {
   button.addEventListener("click", () => {
