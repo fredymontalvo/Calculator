@@ -1,4 +1,3 @@
-
 const buttonNumm = document.querySelectorAll(".number"); //  seleccionamos todos los botones que tengan la clase number
 const buttonOper = document.querySelectorAll(".operator"); //  seleccionamos todos los botones que tengan la clase operator
 const buttonEqual = document.querySelector(".equal");
@@ -7,22 +6,22 @@ const buttonEraseAll = document.querySelector(".erase-all");
 const textSuperiorValue = document.querySelector(".superior_value");
 const textInferiorValue = document.querySelector(".inferior_value");
 
-
 class Calculator {
   constructor(textInferiorValue, textSuperiorValue) {
-    this.textInferiorValue = textInferiorValue;// creamos variabeles locales para que no se confundan con las globales
+    this.textInferiorValue = textInferiorValue; // creamos variabeles locales para que no se confundan con las globales
     this.textSuperiorValue = textSuperiorValue;
     this.inferiorValue = "";
     this.superiorValue = "";
     this.operator = undefined; //para guardar la operacion que se va a realizar
   }
+
   //metodos
   addNumber(number) {
     if (number === "." && this.inferiorValue.includes(".")) return; //si el numero es un punto y el valor inferior incluye un punto no hace nada.
     this.inferiorValue += number; //concatena el numero que se presiona
   }
   updateDisplay() {
-    this.textInferiorValue.textContent = this.inferiorValue;//actualiza el valor inferior
+    this.textInferiorValue.textContent = this.inferiorValue; //actualiza el valor inferior
     this.textSuperiorValue.textContent = this.superiorValue;
   }
   erase() {
@@ -38,7 +37,7 @@ class Calculator {
     this.inferiorValue = ""; // borra el valor inferior
   }
   compute() {
-    let result;//almacena los parametros de la operacion
+    let result; //almacena los parametros de la operacion
     let convertSuperiorValue = parseFloat(this.superiorValue); //convierte el string en un numero
     let convertInferiorValue = parseFloat(this.inferiorValue);
     if (isNaN(convertSuperiorValue) || isNaN(convertInferiorValue)) return; //si no es un numero no hace nada
@@ -71,11 +70,14 @@ class Calculator {
     this.operator = undefined;
   }
 }
-const calculator = new Calculator(textInferiorValue, textSuperiorValue); //crea una instancia de la clase Calculator, le pasamos los parametros que necesita, los textos que se van a actualizar, los seleccionamos con querySelector, y los pasamos como parametros. 
+const calculator = new Calculator(textInferiorValue, textSuperiorValue); //crea una instancia de la clase Calculator, le pasamos los parametros que necesita, los textos que se van a actualizar, los seleccionamos con querySelector, y los pasamos como parametros.
+
+//eventos de los botones
+//addEventListener permite escuchar eventos, en este caso el evento click.
 
 buttonNumm.forEach((button) => {
   button.addEventListener("click", () => {
-    calculator.addNumber(button.textContent); //agrega el numero que se presiona
+    calculator.addNumber(button.innerText); //agrega el numero que se presiona
     calculator.updateDisplay();
   });
 });
@@ -86,7 +88,7 @@ buttonErase.addEventListener("click", () => {
 
 buttonOper.forEach((button) => {
   button.addEventListener("click", () => {
-    calculator.chooseOperation(button.textContent);
+    calculator.chooseOperation(button.innerText);
     calculator.updateDisplay();
   });
 });
@@ -100,4 +102,3 @@ buttonEraseAll.addEventListener("click", () => {
   calculator.eraseScreen();
   calculator.updateDisplay();
 });
-
