@@ -80,3 +80,26 @@ body {
 text-align: center;
 }
 
+@media screen and (max-width: 780px){
+
+  #calculator {
+    width: 300px;
+    height: 600px;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: minmax(130px, auto) repeat(6, 70px);
+    margin-bottom: 1.5rem;
+  }
+  #calculator button {
+    font-size: 1.5rem;
+  }
+  .display {
+    height: 100px;
+  }
+  .superior_value {
+    font-size: 1.5em;
+  }
+  .inferior_value {
+    font-size: 2rem;
+  }
+  
+}
